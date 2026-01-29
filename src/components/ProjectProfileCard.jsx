@@ -10,18 +10,17 @@ const ProjectProfileCard = () => {
   return (
     <div className="col-span-12 xl:col-span-3">
       <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-        {/* Header */}
+      
         <div className="flex gap-3 mb-5">
           <div className="w-[60px] h-[60px] border border-slate-200 rounded-lg flex items-center justify-center p-1 bg-white shrink-0">
             <img src="src/components/luckyhomes.png" alt="logo" className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-[16px] font-bold text-[#1e293b] leading-tight">Lucky Homes</h2>
-            <p className="text-[12px] text-[#475569] leading-snug mt-1">Experience Ultra Luxury Living in Noida Extension</p>
+            <p className="text-[12px] leading-snug mt-1">Experience Ultra Luxury Living in Noida Extension</p>
           </div>
         </div>
 
-        {/* Details */}
         <div className="space-y-2.5">
           <div className="flex items-start">
             <div className="w-[130px] shrink-0 flex items-center gap-2 text-[#64748b] text-[13px]"><Building2 className="w-4 h-4" strokeWidth={1.5} /><span>Builder:</span></div>
@@ -64,7 +63,7 @@ const ProjectProfileCard = () => {
           </div>
         </div>
 
-        {/* Footer Stats */}
+      
         <div className="mt-4 pt-4 border-t border-slate-200 space-y-2.5">
           <div className="flex items-center"><div className="w-[130px] shrink-0 flex items-center gap-2 text-[#64748b] text-[13px]"><Calendar className="w-4 h-4" strokeWidth={1.5} /><span>Pos. Year:</span></div><span className="text-[#0f172a] text-[13px] font-medium">June, 2029</span></div>
           <div className="flex items-center"><div className="w-[130px] shrink-0 flex items-center gap-2 text-[#64748b] text-[13px]"><Building2 className="w-4 h-4" strokeWidth={1.5} /><span>No. of Tower:</span></div><span className="text-[#0f172a] text-[13px] font-medium">5</span></div>
