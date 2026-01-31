@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 
 import BuilderLayout from './BuilderLayout';
+import BasicDetails from './pages/BasicDetails';  
 
 
 import Overview from './pages/Overview';
@@ -20,7 +21,7 @@ const App = () => {
           
          
           <Route path="overview" element={<Navigate to="/" replace />} /> 
-          <Route path="basic-details" element={<div className="p-10">Basic details</div>} />
+          <Route path="basic-details" element={<BasicDetails />} />
           
    
           <Route path="about-project" element={<div className="p-10">About Project Content</div>} />
