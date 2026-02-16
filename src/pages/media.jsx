@@ -3,17 +3,17 @@ import React, { useState } from 'react';
 const Media = () => {
   const [activeTab, setActiveTab] = useState('Photos');
 
-  // Placeholder image resembling the skyscrapers in your screenshot
-  const placeholderImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop";
 
-  // Create an array of 16 items to match the 4x4 grid in the image
+  const placeholderImage = "src/pages/build.jpg"; 
+
+  
   const mediaItems = Array(16).fill(placeholderImage);
 
   return (
-    // Added pb-20 for consistent bottom spacing
+  
     <div className="p-8 pb-20 bg-white min-h-screen font-inter text-slate-900">
       
-      {/* Header Section: Tabs on Left, Button on Right */}
+    
       <div className="flex justify-between items-center mb-6">
         
         {/* Tabs: Photos | Videos */}
@@ -44,7 +44,7 @@ const Media = () => {
 
       {/* Grid Section */}
       {activeTab === 'Photos' ? (
-        // 4 Columns, tight gap (gap-4)
+       
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {mediaItems.map((imgSrc, index) => (
             <div key={index} className="aspect-[4/3] w-full overflow-hidden rounded-[8px]">
@@ -57,7 +57,7 @@ const Media = () => {
           ))}
         </div>
       ) : (
-        // Empty state for Videos
+       
         <div className="py-20 text-center text-slate-500 italic">
           No videos available.
         </div>

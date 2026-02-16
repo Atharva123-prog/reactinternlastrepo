@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-// --- Helper Component for Data Rows ---
-// Matches the exact alignment: Label (Gray) | Value (Black, Medium)
+
 const DetailRow = ({ label, value }) => (
   <div className="flex items-start py-[3px] text-[14px] font-inter">
     <div className="w-[180px] shrink-0 text-[#4E5E6A] font-normal">
@@ -81,9 +80,9 @@ const FloorPlan = () => {
 
           {/* RIGHT COLUMN: Image */}
           <div className="w-full lg:w-[450px] shrink-0">
-            {/* Image Container: Rounded, Border, Padding */}
+       
             <div className="border border-gray-200 rounded-[10px] p-2 bg-white shadow-[0_0_4px_rgba(0,0,0,0.05)]">
-              {/* PLACEHOLDER IMAGE: Use your actual image source here */}
+             
               <img
                 src="src/pages/house.png" 
                 alt="2 BHK Floor Plan"
@@ -99,7 +98,7 @@ const FloorPlan = () => {
         </div>
       )}
 
-      {/* Empty States for other tabs */}
+    
       {activeTab !== '2 BHK' && (
         <div className="py-20 text-center text-slate-400 italic">
           Content for {activeTab} coming soon...

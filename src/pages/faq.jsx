@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Pencil, Trash2, ChevronDown } from 'lucide-react';
 
-/* --- Individual FAQ Item Component --- */
 const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
   return (
     <div className={`rounded-lg border border-gray-200 overflow-hidden mb-4 shadow-sm transition-all duration-200 ${isOpen ? 'ring-1 ring-blue-100' : ''}`}>
@@ -20,7 +19,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
         {/* Dynamic Icon Logic */}
         <div>
           {isOpen ? (
-            // IF OPEN: Show Edit & Delete icons
+         
             <div className="flex items-center gap-3">
               <button className="text-black hover:text-gray-700 transition-colors">
                 <Pencil className="w-[16px] h-[16px]" strokeWidth={1.5} />
@@ -30,14 +29,13 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
               </button>
             </div>
           ) : (
-            // IF CLOSED: Show Chevron Down icon
+           
             <ChevronDown className="w-5 h-5 text-gray-400" strokeWidth={1.5} />
           )}
         </div>
       </div>
 
-      {/* 2. Answer Section (Light Blue Background) */}
-      {/* Only visible when isOpen is true */}
+    
       {isOpen && (
         <div className="bg-[#f0f9ff] p-4 pl-10 border-t border-gray-100">
           <p className="text-[14px] text-slate-700 leading-relaxed font-normal">
@@ -50,15 +48,15 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
 };
 
 const FAQ = () => {
-  // Default to first item open (index 0) as seen in screenshot
+  
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleFAQ = (index) => {
-    // If clicking the already open item, close it (set to null), otherwise open the new one
+    
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Exact Questions from your image
+ 
   const faqData = [
     {
       question: "What is the possession date of the project?",
