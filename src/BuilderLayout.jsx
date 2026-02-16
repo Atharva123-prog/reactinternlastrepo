@@ -12,7 +12,11 @@ import BasicDetails from './pages/BasicDetails';
 import AboutProject from './pages/AboutProject';
 import Amenities from './pages/Amenities';
 import NearbyLocations from './pages/NearbyLocations'; 
-
+import FloorPlan from './pages/floorplan';
+import FAQ from './pages/faq';
+import ReraAndLegal from './pages/reraandlegal';
+import Media from './pages/media';
+import Reviews from './pages/review';
 const Placeholder = ({ title }) => (
   <div className="p-10 text-slate-500 text-center border border-dashed border-slate-300 rounded-xl m-6">
     {title} Content Coming Soon...
@@ -41,12 +45,12 @@ const BuilderLayout = () => {
     <BasicDetails key="1" />,                              
     <AboutProject key="2" />,                              
     <Amenities key="3" />,                                 
-    <Placeholder key="4" title="Floor Plan" />,            
+    <FloorPlan key="4" />,            
     <NearbyLocations key="5" />,                           
-    <Placeholder key="6" title="Media" />,                 
-    <Placeholder key="7" title="Reviews" />,               
-    <Placeholder key="8" title="RERA and legal" />,        
-    <Placeholder key="9" title="FAQ" />,                   
+    <Media key="6" />,                 
+    <Reviews key="7" />,               
+    <ReraAndLegal key="8"  />,        
+    <FAQ key="9" />,                   
   ];
 
   return (
