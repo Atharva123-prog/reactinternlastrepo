@@ -1,53 +1,52 @@
-// import React from 'react';
-// import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-
-// import BuilderLayout from './BuilderLayout';
-// import BasicDetails from './pages/BasicDetails';  
-
-
-// import Overview from './pages/Overview';
-
-
-// const App = () => {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-      
-//         <Route path="/" element={<BuilderLayout />}>
-          
-        
-//           <Route index element={<Overview />} />
-          
-         
-//           <Route path="overview" element={<Navigate to="/" replace />} /> 
-//           <Route path="basic-details" element={<BasicDetails />} />
-          
-   
-//           <Route path="about-project" element={<div className="p-10">About Project Content</div>} />
-//           <Route path="amenities" element={<div className="p-10">Amenities Content</div>} />
-//           <Route path="floor-plan" element={<div className="p-10">Floor Plan Content</div>} />
-//           <Route path="nearby-locations" element={<div className="p-10">Nearby Locations Content</div>} />
-//           <Route path="media" element={<div className="p-10">Media Content</div>} />
-//           <Route path="reviews" element={<div className="p-10">Reviews Content</div>} />
-          
-//         </Route>
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// };
-
-// export default App;
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+// Layouts & Pages
+import DashboardLayout from './layouts/DashboardLayout';
 import BuilderLayout from './BuilderLayout';
+import Client from './pages/Client'; 
+import AllClient from './pages/AllClient'; 
+import ClientDetails from './pages/ClientDetails'; 
+
+// Here is the missing DummyPage! This prevents the blank screen crash.
+const DummyPage = ({ title }) => (
+  <div className="flex items-center justify-center h-full min-h-[600px] bg-white rounded-xl border border-slate-200 shadow-sm m-6">
+    <div className="text-center space-y-3">
+      <h2 className="text-2xl font-bold text-slate-800">{title}</h2>
+      <p className="text-slate-500">This page is under construction...</p>
+    </div>
+  </div>
+);
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Only one main route. Internal switching is handled by BuilderLayout state. */}
-        <Route path="/" element={<BuilderLayout />} />
+        <Route path="/" element={<DashboardLayout />}>
+          
+          <Route index element={<Navigate to="/projects" replace />} />
+          <Route path="projects" element={<BuilderLayout />} />
+          
+          <Route path="client" element={<Client />} />               
+          <Route path="client/all" element={<AllClient />} />        
+          
+          {/* Your new dynamic route for the eye button */}
+          <Route path="client/details/:id" element={<ClientDetails />} />
+          
+          {/* Dummy routes for everything else */}
+          <Route path="dashboard" element={<DummyPage title="Dashboard" />} />
+          <Route path="leads" element={<DummyPage title="Leads" />} />
+          <Route path="booking" element={<DummyPage title="Booking" />} />
+          <Route path="inventory" element={<DummyPage title="Inventory" />} />
+          <Route path="expenses" element={<DummyPage title="Expenses" />} />
+          <Route path="employee" element={<DummyPage title="Employee" />} />
+          <Route path="tickets" element={<DummyPage title="Tickets" />} />
+          <Route path="notes" element={<DummyPage title="Notes" />} />
+          <Route path="report" element={<DummyPage title="Report" />} />
+          <Route path="settings" element={<DummyPage title="Settings" />} />
+          
+        </Route>
       </Routes>
     </BrowserRouter>
   );
