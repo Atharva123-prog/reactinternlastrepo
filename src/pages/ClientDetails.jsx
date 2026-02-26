@@ -68,9 +68,8 @@ const ClientDetails = () => {
       {activeTab === 'Overview' ? (
         <div className="grid grid-cols-12 gap-6">
           
-          {/* ========================================== */}
+        
           {/* --- LEFT COLUMN (Overview Data) --- */}
-          {/* ========================================== */}
           <div className="col-span-12 xl:col-span-8 space-y-6">
             
             {/* 1. Contacts Card */}
@@ -182,7 +181,7 @@ const ClientDetails = () => {
                   <div>
                     <div className="text-[12px] text-slate-500 mb-1">Sales Person</div>
                     <div className="flex items-center gap-2">
-                      {/* ✅ USING THE IMPORTED HARSHIT IMAGE HERE */}
+
                       <img src={harshitImg} alt="avatar" className="w-5 h-5 rounded-full object-cover" />
                       <span className="text-[13px] font-semibold text-slate-800">Harshit</span>
                     </div>
@@ -339,9 +338,9 @@ const ClientDetails = () => {
           </div>
 
 
-          {/* ========================================== */}
+        
           {/* --- RIGHT COLUMN (Side Widgets) --- */}
-          {/* ========================================== */}
+        
           <div className="col-span-12 xl:col-span-4 space-y-6">
             
             {/* 1. Client Info Widget */}
@@ -412,7 +411,7 @@ const ClientDetails = () => {
                   { badge: 'Help', badgeColor: 'bg-[#00B050]', id: 4 }
                 ].map((note) => (
                   <div key={note.id} className="flex gap-3 py-4 border-b border-slate-100 last:border-0 last:pb-0 first:pt-0">
-                    {/* ✅ USING THE IMPORTED HARSHIT IMAGE HERE TOO */}
+                  
                     <img src={harshitImg} alt="user" className="w-8 h-8 rounded-full shrink-0 object-cover mt-0.5" />
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start mb-0.5">
